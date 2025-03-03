@@ -17,14 +17,17 @@ class Player(CircleShape):
     
     def update(self, dt):
         keys = pygame.key.get_pressed()
+        print(f"Got key: {keys}")
 
         if keys[pygame.K_a]:
             self.rotate(-dt)
         if keys[pygame.K_d]:
             self.rotate(dt)
         if keys[pygame.K_w]:
+            print("Forwards")
             self.move(dt)
         if keys[pygame.K_s]:
+            print("Backwards")
             self.move(-dt)
     
     # GRAPHICS METHODS    
