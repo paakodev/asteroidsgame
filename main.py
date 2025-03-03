@@ -14,15 +14,20 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    
     player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+    Player.containers = (updatable, drawable)
     
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
         screen.fill("black")
-        player.update(dt)
-        player.draw(screen)
+        updatable.update(dt)
+        for thing in drawable:
+            thing.draw(screen)
         pygame.display.flip()
         
         # Tick the loop
