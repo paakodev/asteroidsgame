@@ -33,6 +33,11 @@ def main():
                 pygame.quit()
         screen.fill("black")
         updatable.update(dt)
+        for roid in asteroids:
+            if player.collision(roid):
+                print("Game over!")
+                pygame.quit()
+                
         for thing in drawable:
             thing.draw(screen)
         pygame.display.flip()
