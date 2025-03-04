@@ -26,4 +26,4 @@ class Asteroid(CircleShape):
     
     # GRAPHICS METHODS    
     def draw(self, screen):
-        pygame.draw.circle(screen, "white", self.position, 2)
+        pygame.draw.circle(screen, "white", self.position, self.radius)
