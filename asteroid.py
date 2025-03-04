@@ -6,14 +6,11 @@ class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
     
-    # STATE METHODS
-    def move(self, dt):
-        self.position += self.velocity * dt
-        
+    # STATE METHODS        
     def update(self, dt):
-        self.move(self, dt)
+        self.position += self.velocity * dt
     
     
     # GRAPHICS METHODS    
     def draw(self, screen):
-        pygame.draw.circle(screen, "white", (self.x, self.y), 2)
+        pygame.draw.circle(screen, "white", self.position, 2)
