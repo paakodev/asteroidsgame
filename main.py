@@ -45,7 +45,7 @@ def main():
         for roid in asteroids:
             for shot in shots:
                 if roid.collision(shot):
-                    roid.kill()
+                    roid.split()
                     shot.kill()
                 
         for thing in drawable:
