@@ -29,7 +29,7 @@ class Player(CircleShape):
         if keys[pygame.K_s]:
             self.move(-dt)
         if keys[pygame.K_SPACE]:
-            if self.shot_cooldown > 0:
+            if self.shot_cooldown < 0:
                 self.shoot()
         
         # Update other states
